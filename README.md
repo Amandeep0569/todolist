@@ -4,7 +4,7 @@
 
 ## Demo
 
-DJANGO_CRUD_APP_DEMO_LINK -
+DJANGO_CRUD_APP_DEMO_LINK - https://amandeepkaur0569.pythonanywhere.com/
 
 
 ## Features
@@ -15,5 +15,3 @@ DJANGO_CRUD_APP_DEMO_LINK -
 - Mark todo item as completed
 
   
-## Run Locally
-
