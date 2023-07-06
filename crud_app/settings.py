@@ -10,9 +10,11 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
-
+import environ
 from pathlib import Path
 
+env = environ.Env()
+environ.Env.read_env()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -83,11 +85,11 @@ DATABASES = {
     # },
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'crud-app',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost', # This value from docker-compose database service name
-        'PORT': '3306', # This port from docker-compose database environment MYSQL_PORT=3306
+        'NAME':  env('DB_NAME'),
+        'USER':  env('DB_USER'),
+        'PASSWORD':  env('DB_PASSWORD'),
+        'HOST': env('DB_HOST'),
+        'PORT': env('DB_PORT'),
     },
 }
 
